@@ -24,9 +24,11 @@ def gamewinner(computer, you):
 
 playsound("my recordings\\start.mpeg")
 choice = 'y'
+
+print("\n\nFirst turn will be Of computer. You have to enter:\n's'for stone\n'p'for paper\n'sc' for scissor\n\nNOTE:- If you enter anything other than 's', 'sc' or 'p', then it's an ERROR & you gotta, try again!!")
+
 while choice == 'y' or choice == 'Y':
 
-    print("\n\nFirst turn will be Of computer you have to enter 's'for stone, 'p'for paper and 'sc' for scissor.\n NOTE:-if you will enter a number other than 's', 'sc' or 'p' the match will be tie")
 
     random_no = random.randint(1, 3)
 
@@ -37,9 +39,9 @@ while choice == 'y' or choice == 'Y':
     elif random_no == 3:
         comp = 'p'
     
-    print("\n\nComputer's turn is done!")
+    print("\n\nComputer's turn is done! It's your turn now.\n\n")
 
-    user_Turn = input("HI, user it's your turn now.\nEnter your choice: ")
+    user_Turn = input("\n\t\tEnter your choice: ")
 
     function_returning = gamewinner(comp, user_Turn)
 
@@ -48,9 +50,12 @@ while choice == 'y' or choice == 'Y':
 
     if function_returning == None:
         playsound("my recordings\\The game is tie.mpeg")
+        print("\n\t\tThe game is a Tie.(Draw)\n")
     elif function_returning == True:
         playsound("my recordings\\User won the  game .mpeg")
+        print("\n\t\tYay!! You won the game.\n")
     elif function_returning == False:
         playsound("my recordings\\computer wins.mpeg")
+        print("\n\t\tSorry, you lost the game. Better Luck next time.\n")
     
-    choice = input("Do you want to play the game again (y/n): ")
+    choice = input("\nDo you want to play the game again (y/n): ")
